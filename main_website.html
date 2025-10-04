@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <style type="text/css">
+            *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            margin-left: auto;
+            
+            }
+            body{
+                display: flex;
+                flex-direction:column;
+                min-height: 100vh;
+            }
+            header{
+                font-size: 5vmax;
+                font-weight: bold;
+                text-align: center;
+                color:white;
+                background-color: rgb(0, 88, 0);
+
+                
+                z-index: 5;
+                align-self: center;
+                width: 100vw;
+                justify-self: center;
+            }
+            div.infoCont{
+                height:auto
+            }
+            div.infoCont > div{
+                display: inline-block;
+                min-width:33vw;
+                border:2.5px solid black;
+            }
+            div.subhed{
+                font-size: 2.5vmax;
+                font-weight: bold;
+                text-align: center;
+                color:black;
+                background-color: rgb(65, 233, 65);
+
+                width:100%;
+                z-index: 5;
+                
+            }
+            div > ul{
+                padding-left: 2.5vmax;
+            }
+            ul.subList{
+                padding-left: 5vmax;
+            }
+            div.led{
+                padding:0;
+                margin:0;
+            }
+            div.meeting{
+                padding:0;
+                margin:0;
+                vertical-align: top;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            NCSSM Physics Club
+        </header>
+        <div class="infoCont">
+            <div class="led">
+                <div class="subhed">Leadership</div>
+                <ul class="ledList">
+                    <li>Co-presidents: Dillan Garner and Nikhil Mehta</li>
+                    <li>Vice president: David Osinuga</li>
+                    <li>Marketing director for PPC:</li>
+                    <li>Competition Director for PPC:</li>
+                    <li>Treasurer of PPC:</li>
+                    <li>Secretary for PPC and NCPhO:</li>
+                    <li>NCPhO Marketing Lead:</li>
+                    <li>Director of Outreach for NCPhO:</li>
+                    <li>Logistics lead for NCPhO:</li>
+                    <li>Academic Lead for NCPhO:</li>
+                </ul>
+                
+                <a class="generaltext" href="https://docs.google.com/forms/d/e/1FAIpQLSe3F1L8x1p1AEcG_AxkXdEsTtU-6V9FGkSKV0zJQL8eg9SVmQ/viewform?usp=dialog">Leadership application</a>
+            </div>
+            <div class="meeting">
+                <div class="subhed">Upcomming Meetings</div>
+                <p class="generaltext">meeting location: Bryan 440</p>
+                <ul class="meetList">
+                    <li>Interest meeting: 10/9/25 8:00-8:30</li>
+                    <li>10/23/25 8:00-9:00</li>
+                    <li>10/30/25 8:00-8:30</li>
+                    <li>11/06/25 8:00-9:30</li>
+                    <li>11/13/25 8:00-9:30</li>
+                    <li>11/20/25 8:00-9:30</li>
+                    <li>11/26/25 11:00-2:00</li>
+                </ul>
+            </div>
+            <div class="comp">
+                <div class="subhed">Competitions</div>
+                <ul class="complist">
+                    <li class="subsubhed">Physics Brawl</li>
+                    
+                    <ul class="sublist">
+                        <li>Description: Up to five high school students compete from their homes by solving physics problems in a three-hour-long contest. </li>
+                        <li>Date: November 26, 2025, 5:00 - 8:00 p.m.</li>
+                    </ul>
+                    <li class="subsubhed">f=ma</li>
+                
+                    <ul class="sublist">
+                        <li>Description: The F=ma exam consists of 25 multiple-choice questions related to classical mechanics, and tests skills on how to apply fundamental principles to real-world scenarios.</li>
+                        <li>Date: Feb 2026</li>
+                    </ul>
+                
+                    <li class="subsubhed">physics Bowl</li>
+                    
+                    <ul class="sublist">
+                        <li>Description:The PhysicsBowl Contest is an international high school competition. School teams compete regionally with other school teams. Your students will take a 40-question, 45-minute timed, multiple-choice test under the supervision of their school.</li>
+                        <li>Date: The 2025 exam will be given between March 19 and April 4, 2025</li>
+                    </ul>
+                
+                    <li class="subsubhed">NCPHO</li>
+                    <ul class="sublist">
+                        <li>Description: NCSSM Durham Physics Problem solving club will create a physics olympiad style test for middle schoolers and high schoolers from North Carolina. Middle schooler questions will be mechanics based and conceptual. Highschooler questions will include mechanics, electricity and magnetism, quantum physics, relativity, and calculus. This will be hosted on the NCSSM Durham Campus and will have food and prizes.</li>
+                        <li>Date: some time in March</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <script type="module">
+            function init(){
+                let meet = document.querySelector('div[class="meeting"]')
+                let meetHeight = document.querySelector('div[class="meeting"]').offsetHeight
+                let led = document.querySelector('div[class="led"]')
+                let leadHeight = document.querySelector('div[class="led"]').offsetHeight
+                let comp = document.querySelector('div[class="comp"]')
+                let compHeight = document.querySelector('div[class="comp"]').offsetHeight
+                let viwi = parseInt(window.innerWidth)
+                let vihe=parseInt(window.innerHeight)
+                let asra=viwi/vihe
+                
+                if (asra<(1)){
+                    let newi = viwi
+                    meet.style.width=newi
+                    led.style.width=newi
+                    comp.style.width=newi
+                }
+                if (asra>=(1)){
+                    if(parseInt(meetHeight)>parseInt(leadHeight)){
+                        meet.style.height=1.1*(parseInt(meetHeight))
+                        led.style.height=1.1*(parseInt(meetHeight))
+                    
+                    }
+                    else{
+                        led.style.height=1.1*(parseInt(leadHeight))
+                        meet.style.height=1.1*(parseInt(leadHeight))
+                    
+                    }
+                    let newi=0.49*viwi
+                    meet.style.width=newi
+                    led.style.width=newi
+                    comp.style.width=0.99*viwi
+                }
+            }
+            window.onload=init
+        </script>
+    </body>
+</html>
